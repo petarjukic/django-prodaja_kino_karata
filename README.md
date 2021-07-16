@@ -1,0 +1,1 @@
+Djnago vjezba 7. Aplikaciju za prodaju kino karata. Korisnik može vidjeti sve projekcije i kupiti karte za iste. Korisnik može vidjeti sve svoje karte i kojim projekcijama pripadaju. Zaposlenik može vidjeti broj prodanih karata za pojedinu projekciju. Zaposlenik također može vidjeti sve korisnike koji su kupili kartu za određenu projekciju.

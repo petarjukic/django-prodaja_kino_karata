@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>My tickets</h2>
+
+{% for ticket in tickets %} 
+    <br>
+    <p>Email: {{ ticket.user.email }} </p>
+    <p>Film name: {{ ticket.projection.filmName }} </p>
+    <p>Duration: {{ ticket.projection.duration }} </p>
+    <p>Capacity: {{ ticket.projection.capacity }} </p>
+    <p>Price: {{ ticket.projection.price }}</p>
+    <p>Seat number: {{ ticket.seatNumber }}</p>
+
+{% endfor %}
+
+{% endblock %}

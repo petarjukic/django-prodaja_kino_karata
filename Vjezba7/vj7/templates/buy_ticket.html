@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h2>Buy ticket for {{projection.filmName}}</h2><br>
+
+<form method="POST">{% csrf_token %}
+    <h3>Choose seat number: </h3>
+    <select name="seatNumber">
+        {% with ""|center:projection.capacity as range %} 
+            {% for i in range %}
+                {% if forloop.counter not in bought_card %}
+                    <option>{{ forloop.counter }}</option>
+                {% endif %}
+            {% endfor %}
+        {% endwith %}
+        
+    </select>
+    
+    <input type="submit" value="Buy">
+</form>
+{% endblock %}

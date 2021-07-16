@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for projection in projections %}
+    {{ projection.id }} 
+    {{projection.filmName}} 
+    Capacity: {{ projection.capacity }} &emsp; <a href="{% url 'buy' projection.id %}">Buy</a><br>
+    
+{% endfor %}
+
+{% endblock %}

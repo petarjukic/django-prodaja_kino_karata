@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;    
+    }
+    </style>
+
+<a href="/insert_projection">Insert projection</a><br>
+<a href="/set_superuser"> Set superuser</a>
+<a href="/search_projection">Search for projection</a>
+
+<h2>List of all users and projections </h2><br><br>
+
+<table style="width:40%">
+    <tr>
+        <th>Email</th>
+        <th>Film name</th>
+        <th>Duration</th>
+        <th>Capacity</th>
+        <th>Price</th>
+        <th>Seat number</th>
+    </tr>
+    <form method="POST">
+        {% for ticket in tickets.all %}
+        <tr>
+            <td> {{ticket.user.email}} </td> 
+            <td> {{ticket.projection.filmName}} </td>
+            <td> {{ticket.projection.duration}} </td>
+            <td> {{ticket.projection.capacity}} </td>
+            <td> {{ticket.projection.price}} </td>
+            <td> {{ticket.seatNumber}} </td>
+        </tr>
+
+    {% endfor %}
+    </form>
+</table>
+{% endblock %}

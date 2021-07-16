@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;    
+    }
+    </style>
+
+<a href="/insert_projection">Insert projection</a><br>
+<a href="/set_superuser"> Set superuser</a><br>
+<a href="/projections_users"> Show all projections with users</a>
+<a href="/search_projection">Search for projection</a>
+
+<h2>List of all users </h2><br><br>
+
+<table style="width:40%">
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Status is staff</th>
+        <th>Change status of user</th>
+    </tr>
+    <form method="POST">
+    
+        {% for user in users %}
+        <tr>
+            <td> {{user.username}} </td> 
+            <td> {{user.email}} </td> 
+            <td> {{user.is_superuser}} </td>
+            <td><a href="{% url 'set_superuser' user.id %}">View</a></td>
+        </tr>
+
+    {% endfor %}
+    </form>
+</table>
+{% endblock %}

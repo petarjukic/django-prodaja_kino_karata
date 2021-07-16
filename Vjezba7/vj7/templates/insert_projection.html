@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="/all_users">All users</a><br>
+<a href="/set_superuser"> Set superuser</a><br>
+<a href="/projections_users"> Show all projections with users</a>
+<a href="/search_projection">Search for projection</a>
+
+<h2>Insert projection </h2>
+
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}<br>
+    <input type="submit" value="Add">
+</form>
+
+{% endblock %}
